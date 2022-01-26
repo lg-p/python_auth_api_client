@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **api_v1_user_roles_assign_post**
-> api_v1_user_roles_assign_post(user_id, role_id)
+> api_v1_user_roles_assign_post(body)
 
 This endpoint will assign a role to the user
 
@@ -32,12 +32,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.UserRolesApi(swagger_client.ApiClient(configuration))
-user_id = swagger_client.UserRoleModel() # UserRoleModel | 
-role_id = swagger_client.UserRoleModel() # UserRoleModel | 
+body = swagger_client.UserRoleModel() # UserRoleModel | Assign role
 
 try:
     # This endpoint will assign a role to the user
-    api_instance.api_v1_user_roles_assign_post(user_id, role_id)
+    api_instance.api_v1_user_roles_assign_post(body)
 except ApiException as e:
     print("Exception when calling UserRolesApi->api_v1_user_roles_assign_post: %s\n" % e)
 ```
@@ -46,8 +45,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | [**UserRoleModel**](UserRoleModel.md)|  | 
- **role_id** | [**UserRoleModel**](UserRoleModel.md)|  | 
+ **body** | [**UserRoleModel**](UserRoleModel.md)| Assign role | 
 
 ### Return type
 
@@ -65,7 +63,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_v1_user_roles_take_away_post**
-> api_v1_user_roles_take_away_post(user_id, role_id)
+> api_v1_user_roles_take_away_post(body)
 
 This endpoint will take away the role from the user
 
@@ -87,12 +85,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.UserRolesApi(swagger_client.ApiClient(configuration))
-user_id = swagger_client.UserRoleModel() # UserRoleModel | 
-role_id = swagger_client.UserRoleModel() # UserRoleModel | 
+body = swagger_client.UserRoleModel() # UserRoleModel | Take away role
 
 try:
     # This endpoint will take away the role from the user
-    api_instance.api_v1_user_roles_take_away_post(user_id, role_id)
+    api_instance.api_v1_user_roles_take_away_post(body)
 except ApiException as e:
     print("Exception when calling UserRolesApi->api_v1_user_roles_take_away_post: %s\n" % e)
 ```
@@ -101,8 +98,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | [**UserRoleModel**](UserRoleModel.md)|  | 
- **role_id** | [**UserRoleModel**](UserRoleModel.md)|  | 
+ **body** | [**UserRoleModel**](UserRoleModel.md)| Take away role | 
 
 ### Return type
 

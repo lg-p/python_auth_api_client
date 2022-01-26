@@ -33,47 +33,45 @@ class UserRolesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v1_user_roles_assign_post(self, user_id, role_id, **kwargs):  # noqa: E501
+    def api_v1_user_roles_assign_post(self, body, **kwargs):  # noqa: E501
         """This endpoint will assign a role to the user  # noqa: E501
 
         Requires authorization and access role \"manage role\"<br/>  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v1_user_roles_assign_post(user_id, role_id, async_req=True)
+        >>> thread = api.api_v1_user_roles_assign_post(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param UserRoleModel user_id: (required)
-        :param UserRoleModel role_id: (required)
+        :param UserRoleModel body: Assign role (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v1_user_roles_assign_post_with_http_info(user_id, role_id, **kwargs)  # noqa: E501
+            return self.api_v1_user_roles_assign_post_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v1_user_roles_assign_post_with_http_info(user_id, role_id, **kwargs)  # noqa: E501
+            (data) = self.api_v1_user_roles_assign_post_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def api_v1_user_roles_assign_post_with_http_info(self, user_id, role_id, **kwargs):  # noqa: E501
+    def api_v1_user_roles_assign_post_with_http_info(self, body, **kwargs):  # noqa: E501
         """This endpoint will assign a role to the user  # noqa: E501
 
         Requires authorization and access role \"manage role\"<br/>  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v1_user_roles_assign_post_with_http_info(user_id, role_id, async_req=True)
+        >>> thread = api.api_v1_user_roles_assign_post_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param UserRoleModel user_id: (required)
-        :param UserRoleModel role_id: (required)
+        :param UserRoleModel body: Assign role (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'role_id']  # noqa: E501
+        all_params = ['body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -88,14 +86,10 @@ class UserRolesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'user_id' is set
-        if self.api_client.client_side_validation and ('user_id' not in params or
-                                                       params['user_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user_id` when calling `api_v1_user_roles_assign_post`")  # noqa: E501
-        # verify the required parameter 'role_id' is set
-        if self.api_client.client_side_validation and ('role_id' not in params or
-                                                       params['role_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `role_id` when calling `api_v1_user_roles_assign_post`")  # noqa: E501
+        # verify the required parameter 'body' is set
+        if self.api_client.client_side_validation and ('body' not in params or
+                                                       params['body'] is None):  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `api_v1_user_roles_assign_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -109,8 +103,8 @@ class UserRolesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'role_id' in params:
-            body_params = params['role_id']
+        if 'body' in params:
+            body_params = params['body']
         # Authentication setting
         auth_settings = ['Authorization']  # noqa: E501
 
@@ -130,47 +124,45 @@ class UserRolesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v1_user_roles_take_away_post(self, user_id, role_id, **kwargs):  # noqa: E501
+    def api_v1_user_roles_take_away_post(self, body, **kwargs):  # noqa: E501
         """This endpoint will take away the role from the user  # noqa: E501
 
         Requires authorization and access role \"manage role\"<br/>  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v1_user_roles_take_away_post(user_id, role_id, async_req=True)
+        >>> thread = api.api_v1_user_roles_take_away_post(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param UserRoleModel user_id: (required)
-        :param UserRoleModel role_id: (required)
+        :param UserRoleModel body: Take away role (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v1_user_roles_take_away_post_with_http_info(user_id, role_id, **kwargs)  # noqa: E501
+            return self.api_v1_user_roles_take_away_post_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v1_user_roles_take_away_post_with_http_info(user_id, role_id, **kwargs)  # noqa: E501
+            (data) = self.api_v1_user_roles_take_away_post_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def api_v1_user_roles_take_away_post_with_http_info(self, user_id, role_id, **kwargs):  # noqa: E501
+    def api_v1_user_roles_take_away_post_with_http_info(self, body, **kwargs):  # noqa: E501
         """This endpoint will take away the role from the user  # noqa: E501
 
         Requires authorization and access role \"manage role\"<br/>  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v1_user_roles_take_away_post_with_http_info(user_id, role_id, async_req=True)
+        >>> thread = api.api_v1_user_roles_take_away_post_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param UserRoleModel user_id: (required)
-        :param UserRoleModel role_id: (required)
+        :param UserRoleModel body: Take away role (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'role_id']  # noqa: E501
+        all_params = ['body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -185,14 +177,10 @@ class UserRolesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'user_id' is set
-        if self.api_client.client_side_validation and ('user_id' not in params or
-                                                       params['user_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `user_id` when calling `api_v1_user_roles_take_away_post`")  # noqa: E501
-        # verify the required parameter 'role_id' is set
-        if self.api_client.client_side_validation and ('role_id' not in params or
-                                                       params['role_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `role_id` when calling `api_v1_user_roles_take_away_post`")  # noqa: E501
+        # verify the required parameter 'body' is set
+        if self.api_client.client_side_validation and ('body' not in params or
+                                                       params['body'] is None):  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `api_v1_user_roles_take_away_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -206,8 +194,8 @@ class UserRolesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'role_id' in params:
-            body_params = params['role_id']
+        if 'body' in params:
+            body_params = params['body']
         # Authentication setting
         auth_settings = ['Authorization']  # noqa: E501
 

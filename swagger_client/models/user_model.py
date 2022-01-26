@@ -36,17 +36,19 @@ class UserModel(object):
         'first_name': 'str',
         'last_name': 'str',
         'login': 'str',
-        'password': 'str'
+        'password': 'str',
+        'region': 'str'
     }
 
     attribute_map = {
         'first_name': 'first_name',
         'last_name': 'last_name',
         'login': 'login',
-        'password': 'password'
+        'password': 'password',
+        'region': 'region'
     }
 
-    def __init__(self, first_name=None, last_name=None, login=None, password=None, _configuration=None):  # noqa: E501
+    def __init__(self, first_name=None, last_name=None, login=None, password=None, region=None, _configuration=None):  # noqa: E501
         """UserModel - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -56,6 +58,7 @@ class UserModel(object):
         self._last_name = None
         self._login = None
         self._password = None
+        self._region = None
         self.discriminator = None
 
         if first_name is not None:
@@ -64,6 +67,8 @@ class UserModel(object):
             self.last_name = last_name
         self.login = login
         self.password = password
+        if region is not None:
+            self.region = region
 
     @property
     def first_name(self):
@@ -152,6 +157,27 @@ class UserModel(object):
             raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
 
         self._password = password
+
+    @property
+    def region(self):
+        """Gets the region of this UserModel.  # noqa: E501
+
+
+        :return: The region of this UserModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """Sets the region of this UserModel.
+
+
+        :param region: The region of this UserModel.  # noqa: E501
+        :type: str
+        """
+
+        self._region = region
 
     def to_dict(self):
         """Returns the model properties as a dict"""
